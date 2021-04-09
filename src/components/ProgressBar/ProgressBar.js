@@ -45,12 +45,8 @@ const ProgressLine = styled.div`
 `
 
 const ProgressBar = ({ value, size }) => {
-   const styles = SIZES[size];
-  let Component;
-  console.log()
-  if (size === "small") {
-    
-  }
+  const styles = SIZES[size];
+  
   return (
     <Wrapper
       style={styles}
