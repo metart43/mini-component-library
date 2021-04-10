@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../constants';
 import Icon from '../Icon';
-import VisuallyHidden from '../VisuallyHidden';
 import { getDisplayedValue } from './Select.helpers';
 
 
@@ -47,12 +46,13 @@ const IconWrapper = styled.div`
   height: var(--size);
   width: var(--size);
   margin: auto;
-  pointer-events: none`
+  pointer-events: none;
+  `
 
 
 const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
-  
+
   return (
     <Wrapper>
       <NativeSelect
@@ -66,12 +66,9 @@ const Select = ({ label, value, onChange, children }) => {
         "--height": 43 + "px"
         }}>
        {displayedValue}
-        <IconWrapper style={{ "--size": 24 + "px" }}>
-          <Icon id="chevron-down" strokeWidth={1} size={24} />
-        </IconWrapper>
-           <VisuallyHidden>
-          {displayedValue}
-        </VisuallyHidden>
+          <IconWrapper style={{ "--size": 24 + "px" }}>
+            <Icon id="chevron-down" strokeWidth={1} size={24} />
+          </IconWrapper>
         </PresentationalBit>
     </Wrapper>
   );
